@@ -12,12 +12,14 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   useDisclosure,
   Divider
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+
+import Skills from './skills';
+
 function Homepage() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -73,12 +75,13 @@ function Homepage() {
             </Canvas>
         </ImageSection>
       </HeroSection>
+      <Skills></Skills>
     </Container>
   )
 }
 
 const Container = styled.div`
-    height: 100vh;
+    height: 200vh;
     width:100%;
     background-color: white;
     display: flex;
@@ -199,7 +202,7 @@ const ContactButton = styled.button`
           box-shadow: 0px 0px 0px 3px rgba(120,79,254,0.6);
       }
 `;
-const TextContainer = styled.section`
+export const TextContainer = styled.section`
    height: 50%;
    width: 100%;
    position: relative;
@@ -207,7 +210,7 @@ const TextContainer = styled.section`
    flex-direction: column;
 `;
 
-const Text = styled.p`
+export const Text = styled.p`
     font-size:${(p) => {
     return p.size? p.size:"25px";
   }};
