@@ -1,6 +1,5 @@
 import React ,{Suspense} from 'react';
 import styled from 'styled-components';
-import '../styles/Homepage.module.css';
 import Git from '../styles/assests/git.svg';
 import { Canvas } from '@react-three/fiber';
 import Box from './Three/Box';
@@ -19,6 +18,8 @@ import {
 } from '@chakra-ui/react';
 
 import Skills from './skills';
+import { Link } from "react-router-dom";
+import Projects from "./projects";
 
 function Homepage() {
 
@@ -37,31 +38,40 @@ function Homepage() {
               <Text>Email Adddress: bheemeshbala.71@gmail.com</Text>
               <Divider orientation='horizontal' />
                <Text>Linkdln:</Text>
-               <a href='https://www.linkedin.com/in/bheemesh'><Text>www.linkedin.com/in/bheemesh</Text></a>
+               <a href='https://www.linkedin.com/in/bheemesh' target="_blank"><Text>www.linkedin.com/in/bheemesh</Text></a>
           </ModalBody>
         </ModalContent>
       </Modal>
       <HeaderNav>
             <NameCard >Bheemesh Balamurugan</NameCard>
             <Nav>
-                <Link>About</Link>
-                <Link>Skills</Link>
-                <Link>Portfolio</Link>
+                <a href='#about'><LiTag>About</LiTag></a>
+                <a href='#skills'><LiTag>Skills</LiTag></a>
+                <a href='#projects'><LiTag>Portfolio</LiTag></a>
             </Nav>
             <NameCard></NameCard>
       </HeaderNav>
-      <HeroSection>
+      <HeroSection id="about">
         <AboutMeSection>
             <TextContainer>
                 <Text size={"100px"} position={"absolute"} top={"50px"}>Let me</Text>
                 <Text size={"30px"} position={"absolute"} top={"155px"} left={"25px"}>Design Your Internet Bubble</Text>
             </TextContainer>
-            <ContactButton onClick={onOpen}>
-             Connect
-            </ContactButton>
+            <ButtonContainer>
+                <ContactButton onClick={onOpen}>
+                Connect
+                </ContactButton>
+                <a  href="/Bheemesh_Resume.pdf"target="_blank">
+                  <ContactButton >
+                  Resume 
+                  </ContactButton>
+                </a>
+            </ButtonContainer>
             <AboutMeFooter>
-                 <Text size={"15px"} >Check Out My:</Text>
-                 <Img src={Git}></Img>
+                 <Text size={"15px"} >GitHub Repository:</Text>
+                  <a  href="https://github.com/Bheemesh1706" target="_blank">
+                  <Img src={Git}></Img>
+                  </a>
             </AboutMeFooter>
         </AboutMeSection>
         <ImageSection>
@@ -76,17 +86,19 @@ function Homepage() {
         </ImageSection>
       </HeroSection>
       <Skills></Skills>
+      <Projects></Projects>
     </Container>
   )
 }
 
 const Container = styled.div`
-    height: 200vh;
+    height: 300vh;
     width:100%;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     `;
 
 const HeaderNav = styled.section`
@@ -95,6 +107,7 @@ const HeaderNav = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 `;
 
 const NameCard = styled.p`
@@ -135,7 +148,7 @@ const Nav = styled.nav`
    align-items: center;
 `;
 
-const Link = styled.li`
+const LiTag = styled.li`
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    font-size: 15px;
    list-style-type: none;
@@ -178,13 +191,15 @@ const AboutMeSection = styled.section`
   
 `;
 
-const AboutMeFooter = styled.section`
+export const AboutMeFooter = styled.section`
    height:30%;
    width: 100%;
    display: flex;
    justify-content: flex-start;
    align-items: center;
-   padding-left: 10px;
+   padding-left: ${(p) => {
+    return p.paddingLeft? p.paddingLeft:"10px";
+  }};
 `;
 
 const ContactButton = styled.button`
@@ -198,9 +213,13 @@ const ContactButton = styled.button`
       border-radius: 16px;
       transition: 0.2s;
       margin-left: 5px;
+      margin-right: 15px;
       &:hover{
           box-shadow: 0px 0px 0px 3px rgba(120,79,254,0.6);
       }
+`;
+
+const ButtonContainer = styled.section`
 `;
 export const TextContainer = styled.section`
    height: 50%;
@@ -230,7 +249,7 @@ export const Text = styled.p`
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 `;
 
-const Img = styled.img`
+export const Img = styled.img`
   height: 40px;
   margin-left: 10px;
 `;
