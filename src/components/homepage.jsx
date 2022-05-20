@@ -47,15 +47,14 @@ function Homepage() {
             <Nav>
                 <a href='#about'><LiTag>About</LiTag></a>
                 <a href='#skills'><LiTag>Skills</LiTag></a>
-                <a href='#projects'><LiTag>Portfolio</LiTag></a>
+                <a href='#projects'><LiTag>Projects</LiTag></a>
             </Nav>
-            <NameCard></NameCard>
       </HeaderNav>
       <HeroSection id="about">
         <AboutMeSection>
             <TextContainer>
                 <Text size={"100px"} position={"absolute"} top={"50px"}>Let me</Text>
-                <Text size={"30px"} position={"absolute"} top={"155px"} left={"25px"}>Design Your Internet Bubble</Text>
+                <Text size={"30px"} position={"absolute"} top={"160px"} left={"25px"}>Design Your Internet Bubble</Text>
             </TextContainer>
             <ButtonContainer>
                 <ContactButton onClick={onOpen}>
@@ -99,6 +98,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
+
     `;
 
 const HeaderNav = styled.section`
@@ -107,7 +107,6 @@ const HeaderNav = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 `;
 
 const NameCard = styled.p`
@@ -121,7 +120,7 @@ const NameCard = styled.p`
 
    &::before{
     content: '';
-    background-color: hsla(61.7, 89.1%, 46.7%, 0.48);
+    background-color: #F3944C;
     position: absolute;
     left: 0;
     z-index: -1;
@@ -150,7 +149,7 @@ const Nav = styled.nav`
 
 const LiTag = styled.li`
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   font-size: 15px;
+   font-size: 20px;
    list-style-type: none;
    font-weight: 500;
    cursor: pointer;
@@ -161,7 +160,7 @@ const LiTag = styled.li`
       width: 100%;
       height: 4px;
       border-radius: 4px;
-      background-color: hsla(61.7, 89.1%, 46.7%, 0.48);
+      background-color: #F3944C;
       bottom: 0;
       left: 0;
       transform-origin: right;
@@ -180,15 +179,16 @@ const HeroSection = styled.section`
     height: 85%;
     width: 80%;
     display:  flex;
+    margin-bottom: 10px;
 `;
 
 const AboutMeSection = styled.section`
-    height: 100%;
+    height: 90%;
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  
+    justify-content: space-evenly;
+    margin-top: 50px;
 `;
 
 export const AboutMeFooter = styled.section`
@@ -207,7 +207,7 @@ const ContactButton = styled.button`
       width: 150px;
       font-size: 20px;
       font-weight: 500;
-      background: #784ffe;
+      background: #F3944C;
       color: #fff;
       border: none;
       border-radius: 16px;
@@ -215,14 +215,15 @@ const ContactButton = styled.button`
       margin-left: 5px;
       margin-right: 15px;
       &:hover{
-          box-shadow: 0px 0px 0px 3px rgba(120,79,254,0.6);
+          box-shadow: 0px 0px 0px 3px #F3944C;
       }
 `;
 
 const ButtonContainer = styled.section`
 `;
+
 export const TextContainer = styled.section`
-   height: 50%;
+   height: 40%;
    width: 100%;
    position: relative;
    display: flex;

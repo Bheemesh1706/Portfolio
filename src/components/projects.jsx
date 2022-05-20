@@ -32,7 +32,7 @@ function Projects() {
                 itemBackgroundStyle={{
                     backgroundColor: "#ece4db",
                     borderRadius: "3px",
-                    boxShadow: "8px 12px 14px -6px black",
+                    boxShadow: "8px 12px 24px  #ebebeb",
                 }}
                 containerBackgroundStyle={{
                     filter: "blur(7px)",
@@ -48,7 +48,7 @@ function Projects() {
                         <ProjectCardBody>
                                 <BodyLeft>
                                     <Text>About</Text>
-                                    <Text size={"20px"}>{data.about}</Text>
+                                    <Text size={"20px"} style={{padding:"25px"}}>{data.about}</Text>
                                     <AboutMeFooter paddingLeft={"25px"}>
                                         <Text size={"15px"} >Code Base:</Text>
                                         <a  href= {data.git} target="_blank">
@@ -92,18 +92,19 @@ export const Title = styled.h1`
   font-weight: bold;
   z-index: 1;
   &::before {
-  background: hsl(45 100% 70%);
+  background: #F3944C;
   content: "";
   inset: 0;
   position: absolute;
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
   z-index: -1;
+  border-radius: 50%;
 }
   
   &:hover{
     &::before {
-            transform: scaleX(1);
+            transform: scaleX(1.2);
     }
 }
 
@@ -120,7 +121,7 @@ const ProjectCard = styled.div`
   min-height: 70%;
   min-width: 430px;
   width: 100%;
-  background-color: azure;
+  background-color: white;
 `;
 
 const ProjectCardHead = styled.section`
@@ -131,6 +132,7 @@ const ProjectCardHead = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 25px;
 `;
 
 const ProjectCardBody = styled.section`
@@ -159,12 +161,14 @@ const BodyRight = styled.section`
     display: flex;
     align-items: center;
     flex-direction: column;
+   
 `;
 
 const BodyRightWrapper = styled.section`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `;
 
 export default Projects

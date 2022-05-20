@@ -23,15 +23,16 @@ function Skills() {
     <SkillConatiner>
         <Title id="skills">Skills</Title>
         <Wrapper >
-            {skills.map((skill,index)=>(<Skill key={index} >
-                <Card>
+            {skills.map((skill,index)=>(<Card  style={{
+        boxShadow: "8px 0px 14px  #ebebeb",
+        cursor: 'pointer'
+      }}>
                     <SkillHead>{skill.name}</SkillHead>
                     <SkillBody>{ skill.skills.map((data,index)=>(
                         <SkillText key={index}>{data.name}</SkillText>
                     ))
                     }</SkillBody>
-                    </Card>
-            </Skill>))}
+                    </Card>))}
         </Wrapper>
     </SkillConatiner>
   )
@@ -45,6 +46,7 @@ const SkillConatiner = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 100px;
 `;
 
 export const Skill = styled.section`
@@ -67,7 +69,6 @@ const Wrapper = styled.section`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  
 `;
 
 export const SkillHead = styled.p`
@@ -76,7 +77,7 @@ export const SkillHead = styled.p`
     font-weight: 600;
     margin-top: 10px;
     text-align: center;
-   
+    padding: 5px;
 `;
 
 export const SkillText = styled.p`
@@ -92,6 +93,7 @@ export const SkillBody = styled.div`
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      padding: 25px;
 `;
 
 export default Skills
