@@ -7,8 +7,7 @@ import ReactCarousel, { AFTER, CENTER, BEFORE } from "react-carousel-animated";
 import "react-carousel-animated/dist/style.css";
 
 function Projects() {
-
-    const test = ["test1","test1","test1","test1","test1"];
+    
     const [projects,setProjects] =useState([{name:"Tapper — A Portfolio for MetaMask Wallet",about:"It’s a Web3 Portfolio website for your Crypto and ERC-20 tokens",git:"https://github.com/Bheemesh1706/Tapper",technology:["Web3.js","Next.js","Typescript","Chakra-UI","Rapid-API","Git","Netlify"]},
     {name:"Emotion Interface",about:"An prototype for SAAS product that used to identify human emotional state during video calls in applications like Google Meet ,Zoom ,Microsoft Teams etc",git:"https://github.com/Bheemesh1706/Emotion-Interface",technology:["React.js","Flask","Node.js","Python","Javascript","GCP API","AWS","AI","Chrome Extentions"]},
     {name:"Forest Rover",about:"An Atonomous rover for forest exploration",git:"https://github.com/Bheemesh1706/Animal_Object_Detection",technology:["Python", "Flask","AI","Embedded C"]},
